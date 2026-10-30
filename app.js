@@ -27,7 +27,9 @@ form.addEventListener('submit', (event) => {
 });
 
 window.addEventListener('message', (event) => {
-  if (event.source !== document.querySelector('.submission-frame').contentWindow) return;
+  const isAppsScriptOrigin = event.origin === 'https://script.google.com'
+    || event.origin.endsWith('script.googleusercontent.com');
+  if (!isAppsScriptOrigin) return;
   if (event.data?.type !== 'registration-result') return;
 
   submitButton.disabled = false;
