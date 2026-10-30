@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4eb">
+    <meta name="description" content="2026 首創公司員工旅遊活動資訊與報名表單。">
+    <title>2026 首創公司員工旅遊</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="event-heading">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> COMPANY GETAWAY <span>／</span> 2026</p>
+        <h1>2026 首創公司<br class="mobile-break">員工旅遊</h1>
+        <p class="heading-note">把日常留在身後，一起出發。</p>
+        <span class="heading-stamp" aria-hidden="true">LET'S<br>GO!</span>
+      </header>
+
+      <section class="banner-section" aria-label="活動橫幅">
+        <img class="event-banner" src="banner.jpg" alt="首創公司 20 週年紀念活動橫幅">
+      </section>
+
+      <section class="details-section" aria-label="活動內容與報名表單">
+        <div class="schedule-column">
+          <div class="section-kicker"><span>01</span> THE DAY</div>
+          <h2>行程時間表</h2>
+          <p class="section-intro">留一整天，和同事一起創造新回憶。</p>
+          <ol class="schedule-list">
+            <li><time>08:00</time><span>報到</span><i class="schedule-mark mark-coral"></i></li>
+            <li><time>09:00</time><span>場次一</span><i class="schedule-mark mark-blue"></i></li>
+            <li><time>10:00</time><span>Break time</span><i class="schedule-mark mark-yellow"></i></li>
+            <li><time>10:30</time><span>場次二</span><i class="schedule-mark mark-green"></i></li>
+            <li><time>11:30</time><span>Q&amp;A</span><i class="schedule-mark mark-purple"></i></li>
+            <li><time>12:00</time><span>活動結束</span><i class="schedule-mark mark-coral"></i></li>
+          </ol>
+          <p class="schedule-footnote"><span aria-hidden="true">✳</span> See you there!</p>
+        </div>
+
+        <div class="registration-column">
+          <div class="form-heading">
+            <div>
+              <div class="section-kicker"><span>02</span> SAVE YOUR SPOT</div>
+              <h2>我要報名</h2>
+            </div>
+            <span class="form-spark" aria-hidden="true">✳</span>
+          </div>
+          <p class="section-intro">填寫資料，和我們一起出發。</p>
+          <form id="registration-form" novalidate>
+            <div class="form-grid">
+              <label class="field field-wide" for="name">姓名 <span class="required">必填</span>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="請輸入姓名" required>
+              </label>
+              <label class="field field-wide" for="email">Email <span class="required">必填</span>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required>
+              </label>
+              <label class="field" for="department">單位
+                <input id="department" name="department" type="text" autocomplete="organization" placeholder="請輸入單位">
+              </label>
+              <label class="field" for="phone">電話 <span class="required">必填</span>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="請輸入聯絡電話" required>
+              </label>
+              <label class="field field-wide" for="job-title">職稱
+                <input id="job-title" name="jobTitle" type="text" autocomplete="organization-title" placeholder="請輸入職稱">
+              </label>
+            </div>
+            <button class="submit-button" type="submit">
+              <span>送出報名</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <iframe class="submission-frame" name="registration-target" title="報名送出結果"></iframe>
+        </div>
+      </section>
+      <footer class="page-footer"><span>2026 首創公司員工旅遊</span><span>MADE FOR A DAY TOGETHER <span aria-hidden="true">✳</span></span></footer>
+    </main>
+  </body>
+</html>
