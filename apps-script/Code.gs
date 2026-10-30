@@ -34,6 +34,13 @@ function setup() {
   sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
   sheet.setFrozenRows(1);
   sheet.getRange('D:D').setNumberFormat('@');
+
+  const defaultSheet = spreadsheet.getSheetByName('工作表1') || spreadsheet.getSheetByName('Sheet1');
+  if (defaultSheet && defaultSheet.getSheetId() !== sheet.getSheetId()
+      && defaultSheet.getLastRow() === 0 && defaultSheet.getLastColumn() === 0
+      && spreadsheet.getSheets().length > 1) {
+    spreadsheet.deleteSheet(defaultSheet);
+  }
   return spreadsheet.getUrl();
 }
 

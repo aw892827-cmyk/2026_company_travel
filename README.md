@@ -10,7 +10,7 @@ Pages 網址：https://aw892827-cmyk.github.io/2026_company_travel/
 
 ## Google Sheet 與 Apps Script
 
-試算表：[2026_公司旅遊](https://docs.google.com/spreadsheets/d/10qH6FH6SvfBMTLYIVoZRr1STyMJ8L_h-J1RI0RT5gNY/edit)
+試算表：[2026_公司旅遊](https://docs.google.com/spreadsheets/d/10qH6FH6SvfBMTLYIVoZRr1STyMJ8L_h-J1RI0RT5gNY/edit?gid=1043042215#gid=1043042215)
 
 Apps Script 專案：[2026_公司旅遊](https://script.google.com/home/projects/1IkbSgdVuHM_r1p8srIW3yjWrxAvZy-D6wJSNRKcEnUq6EJr7tc-ADvyv/edit)
 
