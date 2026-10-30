@@ -78,5 +78,5 @@ function doPost(event) {
 
   return HtmlService.createHtmlOutput(
     '<script>window.top.postMessage({type:"registration-result",ok:' + ok + '},"*");</script>'
-  );
+  ).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
