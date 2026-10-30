@@ -8,12 +8,23 @@ function setup() {
   let spreadsheet;
 
   if (spreadsheetId) {
-    spreadsheet = SpreadsheetApp.openById(spreadsheetId);
-  } else {
+    try {
+      spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+    } catch (error) {
+      spreadsheetId = null;
+    }
+  }
+
+  if (!spreadsheetId) {
     const files = DriveApp.getFilesByName(SPREADSHEET_NAME);
-    spreadsheet = files.hasNext()
-      ? SpreadsheetApp.open(files.next())
-      : SpreadsheetApp.create(SPREADSHEET_NAME);
+    while (files.hasNext()) {
+      const file = files.next();
+      if (file.getMimeType() === MimeType.GOOGLE_SHEETS) {
+        spreadsheet = SpreadsheetApp.openById(file.getId());
+        break;
+      }
+    }
+    if (!spreadsheet) spreadsheet = SpreadsheetApp.create(SPREADSHEET_NAME);
     spreadsheetId = spreadsheet.getId();
     properties.setProperty('SPREADSHEET_ID', spreadsheetId);
   }
@@ -24,6 +35,10 @@ function setup() {
   sheet.setFrozenRows(1);
   sheet.getRange('D:D').setNumberFormat('@');
   return spreadsheet.getUrl();
+}
+
+function doGet() {
+  return ContentService.createTextOutput('Registration endpoint ready.');
 }
 
 function doPost(event) {
@@ -62,6 +77,6 @@ function doPost(event) {
   }
 
   return HtmlService.createHtmlOutput(
-    `<script>window.top.postMessage({type:'registration-result',ok:${ok}},'*');</script>`
+    '<script>window.top.postMessage({type:"registration-result",ok:' + ok + '},"*");</script>'
   );
 }
